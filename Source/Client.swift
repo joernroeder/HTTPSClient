@@ -80,7 +80,7 @@ extension Client {
     private func addHeaders(to request: inout Request) {
         let port = (self.port == 443) ? "" : ":\(self.port)"
         request.host = "\(host)\(port)"
-        request.userAgent = "Zewo"
+        //request.userAgent = "Zewo" // @see https://github.com/VeniceX/HTTPSClient/issues/24
 
         if !keepAlive && request.connection.isEmpty {
             request.connection = "close"
